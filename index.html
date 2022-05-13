@@ -1,6 +1,6 @@
 <html>
 	<head>
-	<title>청렴도 테스트2</title>
+	<title>청렴도 테스트</title>
 	<style>
 		* {
 		  margin: 0;
@@ -467,12 +467,12 @@
 				//console.log(count);
 				
 				// "아니다" 갯수에 따라서 타입을 나눔
-				if(count > 1){					 
-					$("rstImg").src="./img/002.png";
-				}
-				else {					
-					$("rstImg").src="./img/001.png";
-					
+				if(count > 7){					 
+					$("#rstImg").src="./img/003.png";
+				}else if(count > 4){					 
+					$("#rstImg").src="./img/002.png";
+				}else {					
+					$("rstImg").src="./img/001.png";					
 				}
 				var $href = $(this).attr('href');
 				layer_popup($href);
