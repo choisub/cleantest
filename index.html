@@ -423,7 +423,7 @@
 							<label for="radio_y10"><span>1</span>그렇다</label>
 						</li>
 						<li>
-							<input type="radio" name="radio10" id="radio_n10" lue="N">
+							<input type="radio" name="radio10" id="radio_n10" value="N">
 							<label for="radio_n10"><span>2</span>아니다</label>						
 						</li>
 					</ul>
@@ -466,6 +466,7 @@
 				}
 				//console.log(count);
 				
+				alert('count : '+count);
 				// "아니다" 갯수에 따라서 타입을 나눔
 				if(count > 7){					 					
 					$("#rstImg").attr("src", "./img/003.png");	
