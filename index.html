@@ -447,13 +447,13 @@
 					<div class="pop-conts">
 						<!--content //-->
 						<p class="title">테스트 결과 보기</p>
-						<p class="type"><span>A</span>타입 입니다.</p>
+						<!--<p class="type"><span>A</span>타입 입니다.</p>
 						<p class="text">						
 							A 111테스트 결과 내용입니다. 테스트 결과 내용입니다. 테스트 결과 내용입니다. 테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.<br/>
 							A 테스트 결과 내용입니다2.<br/>
 							A 테스트 결과 내용입니다3.<br/>
 							AA 테스트 결과 내용입니다4.
-						</p>
+						</p>-->
 
 						<div class="btn-r">
 							<a href="#" class="btn-layerClose">닫기</a>
@@ -484,15 +484,12 @@
 				//console.log(count);
 				
 				// "아니다" 갯수에 따라서 타입을 나눔
-				if(count > 1){
-					$(".pop-layer .type span").text("B");
-					$(".pop-layer .pop-conts ").addClass("typeB");
-					$(".pop-layer .text").html("B 테스트 결과 내용입니다222. 테스트 결과 내용입니다. 테스트 결과 내용입니다.<br/> 테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.<br/>B 테스트 결과 내용입니다2.<br/>B 테스트 결과 내용입니다3.<br/>B 테스트 결과 내용입니다4.");
+				if(count > 1){					 
+					$(".pop-layer .pop-conts ").addClass("typeB");					
 				}
-				else {
-					$(".pop-layer .type span").text("A");
+				else {					
 					$(".pop-layer .pop-conts ").addClass("typeA");
-					$(".pop-layer .text").html("A 테스트 결과 내용입니다333. 테스트 결과 내용입니다. 테스트 결과 내용입니다. 테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.<br/>A 테스트 결과 내용입니다2.<br/>A 테스트 결과 내용입니다3.<br/>A 테스트 결과 내용입니다4. ");				
+					
 				}
 				var $href = $(this).attr('href');
 				layer_popup($href);
