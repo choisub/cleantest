@@ -439,9 +439,8 @@
 				<div class="pop-container">
 					<div class="pop-conts">
 						<!--content //--> 
-						<div class="btn-r">
-							<a href="#" class="btn-layerClose">닫기</a>
-						</div>
+						<img id="rstImg" src="./img/001.png" height = "80%" width="80%" onClick="$('.dim-layer').fadeOut();">
+						<!--<div class="btn-r"><a href="#" class="btn-layerClose">닫기</a></div>-->
 						<!--// content-->
 					</div>
 				</div>
@@ -469,10 +468,10 @@
 				
 				// "아니다" 갯수에 따라서 타입을 나눔
 				if(count > 1){					 
-					$(".pop-layer .pop-conts ").addClass("typeB");					
+					$("rstImg").src="./img/002.png";
 				}
 				else {					
-					$(".pop-layer .pop-conts ").addClass("typeA");
+					$("rstImg").src="./img/001.png";
 					
 				}
 				var $href = $(this).attr('href');
