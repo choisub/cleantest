@@ -1,0 +1,416 @@
+<html>
+	<head>
+	<title>샘플 테스트 페이지입니다.</title>
+	<style>
+		* {
+		  margin: 0;
+		  padding: 0;
+		}
+
+		body {
+		  margin: 50px;
+		}
+
+		.pop-layer .pop-container {
+		  padding: 20px 25px;
+		}
+
+		.pop-layer p.ctxt {
+		  color: #666;
+		  line-height: 25px;
+		}
+
+		.pop-layer .btn-r {
+		  width: 100%;
+		  margin: 10px 0 0px;
+		  padding-top: 10px;
+		  /*  border-top: 1px solid #DDD; */
+		  text-align: right;
+		}
+
+		.pop-layer {
+		  display: none;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  width: 600px;
+		  height: auto;
+		  background-color: #fff;
+		  border: 3px solid #0e707b;
+		  z-index: 10;
+		}
+
+		.dim-layer {
+		  display: none;
+		  position: fixed;
+		  _position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  z-index: 100;
+		}
+
+		.dim-layer .dimBg {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  background: #000;
+		  opacity: .5;
+		  filter: alpha(opacity=50);
+		}
+
+		.dim-layer .pop-layer {
+		  display: block;
+		}
+
+		a.btn-layerClose {
+		  display: inline-block;
+		  height: 25px;
+		  padding: 0 14px 0;
+		  border: 1px solid #055760;
+		  background-color: #0e707b;
+		  font-size: 13px;
+		  color: #fff;
+		  line-height: 25px;
+		}
+
+		
+		h2 { margin-bottom: 50px; }
+		
+		.test_title {
+			display: inline-block;
+			margin-bottom: 25px;
+			position: relative;
+		}
+		span.num {
+			display: inline-block;
+			width: 75px;
+			height: 32px;
+			line-height: 32px;
+			color: #fff;
+			background: #0e707b;
+			text-align: center;
+			font-size: 16px;
+			font-weight: 100;
+			vertical-align: middle;
+			position: absolute;
+			left: 0;
+			top: -3px;
+		}
+		span.text {
+			font-size: 22px;
+			color: #212121;
+			font-weight: 300;
+			display: inline-block;
+			vertical-align: middle;
+			padding-left: 90px;
+			line-height: 1.3;
+			word-break: keep-all;
+		}
+		 
+		label:nth-child(n+2) {
+			margin-top: 18px;
+		}
+		label:nth-child(n+2) {
+			margin-top: 18px;
+		}
+		
+		.test_cont {
+			margin-top: 25px;
+			padding-bottom: 25px;
+		}
+		.test_wrap > .test_cont + .test_cont {
+			border-top: 1px solid #ddd;
+			padding-top: 35px;
+		}
+		
+		input[type="radio"] + label {
+			/*display: block;*/
+			position: relative;
+			padding-left: 33px;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			font-size: 15px;
+			color: #616161;
+		}
+		.test_answer {
+			position: relative;
+		}
+		/*		
+		input[type="radio"] {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0,0,0,0);
+			border: 0;
+		}
+		
+		input[type="radio"] + label:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: -3px;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			border: 1px solid #BDBDBD;
+			border-radius: 50%;
+		}
+		*/
+		input[type="radio"] + label > span {
+			display: inline-block;
+			box-sizing: border-box;
+			width: 20px;
+			height: 20px;
+			background: #E8E8E8;
+			color: #848484;
+			text-align: center;
+			line-height: 20px;
+			border-radius: 50%;
+			vertical-align: top;
+			position: absolute;
+			font-size: 12px;
+			left: 3px;
+			top: -1px;
+		}
+		
+		li { list-style: none; }
+		
+		li+li {
+			margin-top: 20px;
+		}
+		a {
+			text-decoration: none;
+		}
+		
+		.btn-result{
+			margin: 30px;
+			line-height: 32px;
+			color: #000;
+			background: #fff;
+			text-align: center;
+			padding: 10px 20px;
+			float: right;
+			border: 1px solid #c3c3c3;
+		}
+		
+		p.title {
+			font-size: 20px;
+			font-weight: 600;
+			border-bottom: 1px solid #DDD;
+			margin-bottom: 20px;
+			padding-bottom: 10px;
+		}
+		p.type {
+			font-size: 30px;
+			font-weight: bold;
+			margin-bottom: 21px;
+		}
+		p.type span {
+			color: #0498a9;
+		}
+		
+		p.text { width: 355px; }
+
+		.typeA::before {
+			content: '';
+			position: absolute;
+			right: 22px;
+			bottom: 62px;
+			background: url(./img/typeA.png);
+			width: 200px;
+			height: 217px;
+		}
+		.typeB::before {
+			content: '';
+			position: absolute;
+			right: 22px;
+			bottom: 62px;
+			background: url(./img/typeB.png);
+			width: 200px;
+			height: 217px;
+		}
+
+	</style>
+	</head>
+	<body>
+		<h2>샘플 테스트</h2>
+		<div class="test_wrap">
+			<div class="test_cont">
+				<div class="test_title">
+					<span class="num">질문 01</span>
+					<span class="text">질문입력</span>
+				</div>
+				<div class="test_answer">
+					<ul>
+						<li>
+							<input type="radio" name="radio1" id="radio_y1" value="Y" required="">
+							<label for="radio_y1"><span>1</span>그렇다</label>
+						</li>
+						<li>
+							<input type="radio" name="radio1" id="radio_n1" value="N">
+							<label for="radio_n1"><span>2</span>아니다</label>						
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="test_cont">
+				<div class="test_title">
+					<span class="num">질문 02</span>
+					<span class="text">질문입력</span>
+				</div>
+				<div class="test_answer">
+					<ul>
+						<li>
+							<input type="radio" name="radio2" id="radio_y2" value="Y" required="">
+							<label for="radio_y2"><span>1</span>그렇다</label>
+						</li>
+						<li>
+							<input type="radio" name="radio2" id="radio_n2" value="N">
+							<label for="radio_n2"><span>2</span>아니다</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="test_cont">
+				<div class="test_title">
+					<span class="num">질문 03</span>
+					<span class="text">질문입력</span>
+				</div>
+				<div class="test_answer">
+					<ul>
+						<li>
+							<input type="radio" name="radio3" id="radio_y3" value="Y" required="">
+							<label for="radio_y3"><span>1</span>그렇다</label>
+						</li>
+						<li>
+							<input type="radio" name="radio3" id="radio_n3" value="N">
+							<label for="radio_n3"><span>2</span>아니다</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="test_cont">
+				<div class="test_title">
+					<span class="num">질문 04</span>
+					<span class="text">질문입력</span>
+				</div>
+				<div class="test_answer">
+					<ul>
+						<li>
+							<input type="radio" name="radio4" id="radio_y4" value="Y" required="">
+							<label for="radio_y4"><span>1</span>그렇다</label>
+						</li>
+						<li>
+							<input type="radio" name="radio4" id="radio_n4" value="N">
+							<label for="radio_n4"><span>2</span>아니다</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+		
+		</div>
+
+		<a href="#layer" class="btn-result">결과보기</a>
+		<div class="dim-layer">
+			<div class="dimBg"></div>
+			<div id="layer" class="pop-layer">
+				<div class="pop-container">
+					<div class="pop-conts">
+						<!--content //-->
+						<p class="title">테스트 결과 보기</p>
+						<p class="type"><span>A</span>타입 입니다.</p>
+						<p class="text">						
+							A 테스트 결과 내용입니다. 테스트 결과 내용입니다. 테스트 결과 내용입니다. 테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.<br/>
+							A 테스트 결과 내용입니다2.<br/>
+							A 테스트 결과 내용입니다3.<br/>
+							AA 테스트 결과 내용입니다4.
+						</p>
+
+						<div class="btn-r">
+							<a href="#" class="btn-layerClose">닫기</a>
+						</div>
+						<!--// content-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./js/jquery-1.9.0.js"></script> 
+		<script>
+			$('.btn-result').click(function(){				
+				var min = $(":radio:checked");
+				var radios = $(":radio[value='N']:radio:checked");
+				var leng = $("[type=radio]").length;
+				var count = 0;
+
+				for (var i = 0; i < leng/2; i++) {
+					var $this = $(min[i]);
+					if (!$this.is(":checked")) { //모든 질문에 답변을 안했을 시
+						alert('반드시 모든 질문에 답변해야합니다.');
+						return;
+					} else {
+						var $that = $(radios[i]);	
+						if($that.length != 0) count ++;						
+					}
+				}
+				//console.log(count);
+				
+				// "아니다" 갯수에 따라서 타입을 나눔
+				if(count > 1){
+					$(".pop-layer .type span").text("B");
+					$(".pop-layer .pop-conts ").addClass("typeB");
+					$(".pop-layer .text").html("B 테스트 결과 내용입니다. 테스트 결과 내용입니다. 테스트 결과 내용입니다.<br/> 테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.<br/>B 테스트 결과 내용입니다2.<br/>B 테스트 결과 내용입니다3.<br/>B 테스트 결과 내용입니다4.");
+				}
+				else {
+					$(".pop-layer .type span").text("A");
+					$(".pop-layer .pop-conts ").addClass("typeA");
+					$(".pop-layer .text").html("A 테스트 결과 내용입니다. 테스트 결과 내용입니다. 테스트 결과 내용입니다. 테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.테스트 결과 내용입니다.<br/>A 테스트 결과 내용입니다2.<br/>A 테스트 결과 내용입니다3.<br/>A 테스트 결과 내용입니다4. ");				
+				}
+				var $href = $(this).attr('href');
+				layer_popup($href);
+			});
+			
+			function layer_popup(el){
+
+				var $el = $(el);    //레이어의 id를 $el 변수에 저장
+				var isDim = $el.prev().hasClass('dimBg'); //dimmed 레이어를 감지하기 위한 boolean 변수
+
+				isDim ? $('.dim-layer').fadeIn() : $el.fadeIn();
+
+				var $elWidth = ~~($el.outerWidth()),
+					$elHeight = ~~($el.outerHeight()),
+					docWidth = $(document).width(),
+					docHeight = $(document).height();
+
+				// 화면의 중앙에 레이어를 띄운다.
+				if ($elHeight < docHeight || $elWidth < docWidth) {
+					$el.css({
+						marginTop: -$elHeight /2,
+						marginLeft: -$elWidth/2
+					})
+				} else {
+					$el.css({top: 0, left: 0});
+				}
+
+				$el.find('a.btn-layerClose').click(function(){
+					isDim ? $('.dim-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+					return false;
+				});
+
+				$('.layer .dimBg').click(function(){
+					$('.dim-layer').fadeOut();
+					return false;
+				});
+
+			}
+		</script>
+	</body>
+</html>
