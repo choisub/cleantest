@@ -1,6 +1,6 @@
 <html>
 	<head>
-	<title>샘플 테스트 페이지입니다.</title>
+	<title>청렴도 테스트2</title>
 	<style>
 		* {
 		  margin: 0;
@@ -33,8 +33,8 @@
 		  position: absolute;
 		  top: 50%;
 		  left: 50%;
-		  width: 90%;
-		  height: 90%;
+		  width: 600px;
+		  height: auto;
 		  background-color: #fff;
 		  border: 3px solid #0e707b;
 		  z-index: 10;
@@ -223,11 +223,9 @@
 		.typeA::before {
 			content: '';
 			position: absolute;
-			right: 22px;
-			bottom: 62px;
 			background: url(./img/001.png);
-			width: 200px;
-			height: 217px;
+			width: 100%;
+			height: 100%;
 		}
 		.typeB::before {
 			content: '';
@@ -236,19 +234,25 @@
 			width: 100%;
 			height: 100%;
 		}
+		.typeC::before {
+			content: '';
+			position: absolute;
+			background: url(./img/003.png);
+			width: 100%;
+			height: 100%;
+		}
 
 	</style>
 	</head>
 	<body>
-		<h2>샘플 테스트</h2>
 		<div class="title_img">
-			<img class ="title_img" src="./img/title_img.jpg" height="40%" width="50%">
+			<img class ="title_img" src="./img/title_img.jpg" height="20%" width="100%" align="center">
 		</div>
 		<div class="test_wrap">
 			<div class="test_cont">
 				<div class="test_title">
 					<span class="num">질문 01</span>
-					<span class="text">질문입력</span>
+					<span class="text">업무지시 할 때 화내거나 욕한적이 있다.</span>
 				</div>
 				<div class="test_answer">
 					<ul>
@@ -266,7 +270,7 @@
 			<div class="test_cont">
 				<div class="test_title">
 					<span class="num">질문 02</span>
-					<span class="text">질문입력</span>
+					<span class="text">타인 앞에서 특정직원의 잘못을 과도하게 질책 한 적이 있다.</span>
 				</div>
 				<div class="test_answer">
 					<ul>
@@ -284,7 +288,7 @@
 			<div class="test_cont">
 				<div class="test_title">
 					<span class="num">질문 03</span>
-					<span class="text">질문입력</span>
+					<span class="text">공식적인 자리에서 부하직원에게 “야”, “너”등 반말로 부른 적이 있다.</span>
 				</div>
 				<div class="test_answer">
 					<ul>
@@ -302,7 +306,7 @@
 			<div class="test_cont">
 				<div class="test_title">
 					<span class="num">질문 04</span>
-					<span class="text">질문입력</span>
+					<span class="text">개인일을 부하직원에게 시킨 적이 있다.</span>
 				</div>
 				<div class="test_answer">
 					<ul>
@@ -317,6 +321,114 @@
 					</ul>
 				</div>
 			</div>
+			<div class="test_cont">
+				<div class="test_title">
+					<span class="num">질문 05</span>
+					<span class="text">부하직원에게 긴급하지 않음에도 야근‧주말근무 지시나 업무로 연락한 적이 있다.</span>
+				</div>
+				<div class="test_answer">
+					<ul>
+						<li>
+							<input type="radio" name="radio5" id="radio_y5" value="Y" required="">
+							<label for="radio_y5"><span>1</span>그렇다</label>
+						</li>
+						<li>
+							<input type="radio" name="radio5" id="radio_n5" value="N">
+							<label for="radio_n5"><span>2</span>아니다</label>						
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="test_cont">
+				<div class="test_title">
+					<span class="num">질문 06</span>
+					<span class="text">직원의 외모‧의상‧고향‧연령‧결혼 등에 대해 지적한 적이 있다.</span>
+				</div>
+				<div class="test_answer">
+					<ul>
+						<li>
+							<input type="radio" name="radio6" id="radio_y6" value="Y" required="">
+							<label for="radio_y6"><span>1</span>그렇다</label>
+						</li>
+						<li>
+							<input type="radio" name="radio6" id="radio_n6" value="N">
+							<label for="radio_n6"><span>2</span>아니다</label>						
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="test_cont">
+				<div class="test_title">
+					<span class="num">질문 07</span>
+					<span class="text">본인의 의사와 상관없이 불필요한 회식, 야외활동 참여 등을 요구한 적이 있다.</span>
+				</div>
+				<div class="test_answer">
+					<ul>
+						<li>
+							<input type="radio" name="radio7" id="radio_y7" value="Y" required="">
+							<label for="radio_y7"><span>1</span>그렇다</label>
+						</li>
+						<li>
+							<input type="radio" name="radio7" id="radio_n7" value="N">
+							<label for="radio_n7"><span>2</span>아니다</label>						
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="test_cont">
+				<div class="test_title">
+					<span class="num">질문 08</span>
+					<span class="text">소속 직원이 연차휴가나 병가 신청 시 타당한 사유 없이 거부한 적이 있다.</span>
+				</div>
+				<div class="test_answer">
+					<ul>
+						<li>
+							<input type="radio" name="radio8" id="radio_y8" value="Y" required="">
+							<label for="radio_y8"><span>1</span>그렇다</label>
+						</li>
+						<li>
+							<input type="radio" name="radio8" id="radio_n8" value="N">
+							<label for="radio_n8"><span>2</span>아니다</label>						
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="test_cont">
+				<div class="test_title">
+					<span class="num">질문 09</span>
+					<span class="text">특정직원에게 정당한 사유 없이 업무를 과다 또는 과소하게 부여한 적이 있다.</span>
+				</div>
+				<div class="test_answer">
+					<ul>
+						<li>
+							<input type="radio" name="radio9" id="radio_y9" value="Y" required="">
+							<label for="radio_y9"><span>1</span>그렇다</label>
+						</li>
+						<li>
+							<input type="radio" name="radio9" id="radio_n9" value="N">
+							<label for="radio_n9"><span>2</span>아니다</label>						
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="test_cont">
+				<div class="test_title">
+					<span class="num">질문 10</span>
+					<span class="text">사적인 이유로 부하직원에게 인사상 불이익 또는 특혜를 준 적이 있다.</span>
+				</div>
+				<div class="test_answer">
+					<ul>
+						<li>
+							<input type="radio" name="radio10" id="radio_y10" value="Y" required="">
+							<label for="radio_y10"><span>1</span>그렇다</label>
+						</li>
+						<li>
+							<input type="radio" name="radio10" id="radio_n10" lue="N">
+							<label for="radio_n10"><span>2</span>아니다</label>						
+						</li>
+					</ul>
+				</div>
+			</div>
 		
 		</div>
 
@@ -326,15 +438,12 @@
 			<div id="layer" class="pop-layer">
 				<div class="pop-container">
 					<div class="pop-conts">
-						<!--content //-->
-						 <img id="rstImg" src="./img/001.png" height = "80%" width="80%">
-
-						 
-						<!--// content-->
-					</div>
-					<div class="btn-r">
+						<!--content //--> 
+						<div class="btn-r">
 							<a href="#" class="btn-layerClose">닫기</a>
 						</div>
+						<!--// content-->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -359,16 +468,12 @@
 				//console.log(count);
 				
 				// "아니다" 갯수에 따라서 타입을 나눔
-				if(count > 1){
-					
-					//$(".pop-layer .pop-conts ").addClass("typeB");
-					//$(".pop-layer .pop-conts ").addClass("typeB");
-					$("rstImg").src="./img/002.png";
+				if(count > 1){					 
+					$(".pop-layer .pop-conts ").addClass("typeB");					
 				}
-				else {
+				else {					
+					$(".pop-layer .pop-conts ").addClass("typeA");
 					
-					//$(".pop-layer .pop-conts ").addClass("typeA");
-					$("rstImg").src="./img/001.png";
 				}
 				var $href = $(this).attr('href');
 				layer_popup($href);
